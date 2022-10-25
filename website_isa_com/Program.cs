@@ -1,7 +1,4 @@
 using Contentful.AspNetCore;
-using Microsoft.AspNetCore.SpaServices.AngularCli;
-using Microsoft.Extensions.Configuration;
-using Microsoft.VisualBasic;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -36,22 +33,22 @@ app.MapRazorPages();
 app.UseEndpoints(endpoints =>
 {
     // In DEV, to enable SSR, you have to set  "outputHashing": "all" to "none" in angular.json "build" section.
-    if (true)
-    {
+    //if (true)
+    //{
         endpoints.MapControllerRoute(
            name: "default",
            pattern: "{controller}/{action=Index}/{id?}"
        );
-    }
-    else
-    {
-        endpoints.MapControllerRoute(
-                name: "default",
-                pattern: "{controller=Home}/{action=Index}/{id?}"
-            );
+    //}
+    //else
+    //{
+    //    endpoints.MapControllerRoute(
+    //            name: "default",
+    //            pattern: "{controller=Home}/{action=Index}/{id?}"
+    //        );
 
-        endpoints.MapFallbackToController("Index", "Home");
-    }
+    //    endpoints.MapFallbackToController("Index", "Home");
+    //}
 });
 
 app.UseSpa(spa =>

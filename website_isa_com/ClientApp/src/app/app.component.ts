@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit } from '@angular/core';
 import { ApiService } from './services/api.service';
 
 @Component({
@@ -10,10 +10,13 @@ import { ApiService } from './services/api.service';
 export class AppComponent implements OnInit {
 
     constructor(
+        private elementRef: ElementRef,
         private apiService: ApiService,
     ) { }
 
     ngOnInit(): void {
+        this.elementRef.nativeElement.removeAttribute("ng-version");
+
         this.apiService.getNavigation().subscribe((result) => {
             console.log("result", result);
         });

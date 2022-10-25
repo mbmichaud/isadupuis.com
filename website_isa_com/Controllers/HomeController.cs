@@ -1,7 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc.ViewEngines;
+﻿using Contentful.Core;
 using Microsoft.AspNetCore.Mvc;
-using website_isa_com.Controllers;
-using Contentful.Core;
 
 namespace website_isa_com.Controllers
 {

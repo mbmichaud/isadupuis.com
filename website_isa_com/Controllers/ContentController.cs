@@ -1,9 +1,5 @@
 ﻿using Contentful.Core;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Http;
-using System.Net.Http;
-using System.Transactions;
-using website_isa_com.Models;
 
 namespace website_isa_com.Controllers
 {
