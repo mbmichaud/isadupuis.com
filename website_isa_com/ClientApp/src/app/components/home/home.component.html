@@ -1,3 +1,45 @@
-<h1 class="text-3xl font-bold underline">
-    Hello world!
-</h1>
+<div class="h-screen">
+    <div class="absolute top-0 h-full w-full  overflow-hidden">
+        <video class="absolute left-0 top-0 m-w-full min-h-full h-auto max-w-none" oncanplay="this.play()" onloadedmetadata="this.muted = true" autoplay="" muted="" loop="" playsinline="" onloadedmetadata="this.muted=true">
+            <source src="/assets/videos/home_video_4.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <section class="h-full dark:text-gray-100 backdrop-blur-sm bg-black/40 flex items-center">
+        <div class="z-40 container mx-auto flex flex-col items-center px-4 py-16 text-center md:py-32 md:px-10 lg:px-32 xl:max-w-3xl ">
+            <h1 class="text-4xl font-bold leading-none sm:text-5xl">
+                De la peinture <span class="dark:text-violet-400">insane</span> de la <span class="dark:text-violet-400">mort</span>
+            </h1>
+            <p class="px-8 mt-8 mb-12 text-lg">Créé en utilisant une multitude de technique et de la peinture de plein de belle couleur!</p>
+            <div class="flex flex-wrap justify-center">
+                <a [routerLink]="'/gallerie'" class="px-8 py-3 m-2 text-lg font-semibold rounded bg-violet-400 text-gray-900 hover:bg-violet-500 transition delay-250">Voir la gallerie</a>
+                <button [ngxScrollTo]="'#content-start'" class="px-8 py-3 m-2 text-lg border rounded dark:text-gray-50 dark:border-gray-700 bg-base-100/20 hover:bg-base-100/40 transition delay-250">En savoir plus</button>
+            </div>
+        </div>
+    </section>
+</div>
+
+<section id="content-start" class="dark:bg-base-100 dark:text-gray-100">
+    <div class="container flex flex-col justify-center p-4 mx-auto md:p-8">
+        <p class="p-2 text-sm font-medium tracking-wider text-center uppercase">How it works</p>
+        <h2 class="mb-12 text-4xl font-bold leading-none text-center sm:text-5xl">Frequently Asked Questions</h2>
+        <div class="grid gap-10 md:gap-8 sm:p-3 md:grid-cols-2 lg:px-12 xl:px-32">
+            <div>
+                <h3 class="font-semibold">Lorem ipsum dolor sit amet.</h3>
+                <p class="mt-1 dark:text-gray-400">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione, fugit? Aspernatur, ullam enim, odit eaque quia rerum ipsum voluptatem consequatur ratione, doloremque debitis? Fuga labore omnis minima, quisquam delectus culpa!</p>
+            </div>
+            <div>
+                <h3 class="font-semibold">Lorem ipsum dolor sit amet.</h3>
+                <p class="mt-1 dark:text-gray-400">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione, fugit? Aspernatur, ullam enim, odit eaque quia rerum ipsum voluptatem consequatur ratione, doloremque debitis? Fuga labore omnis minima, quisquam delectus culpa!</p>
+            </div>
+            <div>
+                <h3 class="font-semibold">Lorem ipsum dolor sit amet.</h3>
+                <p class="mt-1 dark:text-gray-400">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione, fugit? Aspernatur, ullam enim, odit eaque quia rerum ipsum voluptatem consequatur ratione, doloremque debitis? Fuga labore omnis minima, quisquam delectus culpa!</p>
+            </div>
+            <div>
+                <h3 class="font-semibold">Lorem ipsum dolor sit amet.</h3>
+                <p class="mt-1 dark:text-gray-400">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione, fugit? Aspernatur, ullam enim, odit eaque quia rerum ipsum voluptatem consequatur ratione, doloremque debitis? Fuga labore omnis minima, quisquam delectus culpa!</p>
+            </div>
+        </div>
+    </div>
+</section>

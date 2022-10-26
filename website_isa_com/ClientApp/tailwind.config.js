@@ -16,6 +16,16 @@ module.exports = {
                 "warning": "#FBBD23",
                 "error": "#F87272",
             },
+            animation: {
+                'bg-left-right-slow': 'bg-left-right 5s ease infinite',
+            },
+            keyframes: {
+                "bg-left-right": {
+                    '0%': { backgroundPosition: '0% 50%' },
+                    '50%': { backgroundPosition: '100% 50%' },
+                    '100%': { backgroundPosition: '0% 50%' },
+                }
+            },
             typography: {
                 DEFAULT: {
                     css: {
