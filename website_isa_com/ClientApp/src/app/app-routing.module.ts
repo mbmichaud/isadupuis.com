@@ -5,9 +5,11 @@ import { GalleryComponent } from './components/gallery/gallery.component';
 import { HomeComponent } from './components/home/home.component';
 
 export const routes: Routes = [
-    { path: '', component: HomeComponent, data: { animation: 'HomePage' } },
+    { path: '', component: HomeComponent, data: { animation: 'home' } },
     { path: 'gallerie', component: GalleryComponent, data: { animation: 'gallery' } },
-    { path: '**', component: ContentComponent, data: { animation: 'AboutPage' } },
+    { path: 'a-propos', component: ContentComponent, data: { animation: 'about' } },
+    { path: 'nous-joindre', component: ContentComponent, data: { animation: 'contact-us' } },
+    { path: '**', component: ContentComponent, data: { animation: 'default' } },
     
 ];
 

@@ -23,7 +23,7 @@ import { GalleryComponent } from './components/gallery/gallery.component';
         HttpClientModule,
         AppRoutingModule,
         RouterModule.forRoot(routes, {
-            scrollPositionRestoration: 'enabled',
+            //scrollPositionRestoration: 'enabled',
         }),
         ScrollToModule.forRoot()
     ],

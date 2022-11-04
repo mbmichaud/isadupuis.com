@@ -39,11 +39,11 @@
         </div>
     </div>
 </header>
-<body class="min-h-screen" [@routeAnimations]="getRouteAnimationData()">
+<body class="min-h-screen" [@fadedNavigationAnimation]="getRouteAnimationData()" (@fadedNavigationAnimation.done)="onNavigationAnimationDone($event)">
     <router-outlet></router-outlet>
 </body>
 
-<footer class="relative">
+<footer class="relative w-full" [@fadeInOut]="isNavigating ? 'hidden' : 'visible'">
     <svg class="xl:mt-[-100px] -z-10 fill-gray-800" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
         <path fill="#1f2937" fill-opacity="1" d="M0,128L40,144C80,160,160,192,240,186.7C320,181,400,139,480,138.7C560,139,640,181,720,181.3C800,181,880,139,960,128C1040,117,1120,139,1200,160C1280,181,1360,203,1400,213.3L1440,224L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"></path>
     </svg>

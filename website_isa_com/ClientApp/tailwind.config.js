@@ -40,7 +40,7 @@ module.exports = {
             customTheme: {
                 "primary": "#5E1C28",
                 "secondary": "#881337",
-                "accent": "#1FB2A6",
+                "accent": "#20e0a5",
                 "neutral": "#191D24",
                 "base-100": "#2A303C",
                 "info": "#3ABFF8",

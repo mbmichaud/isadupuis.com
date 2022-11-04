@@ -17,10 +17,41 @@ namespace website_isa_com.Controllers
             _client = client;
         }
 
-        [HttpPost("navigation")]
+        [HttpGet("navigation")]
         public async Task<IActionResult> GetNavigation(string? url)
         {
-            var result = await _client.GetEntry<Canvas>("4cZNIwV8XeXxVsVkMvW13m");
+            if (string.IsNullOrEmpty(url))
+                return BadRequest();
+
+            return Ok();
+        }
+
+        [HttpGet("entities/{identifier}")]
+        public async Task<IActionResult> GetEntities(string identifier)
+        {
+            if (string.IsNullOrEmpty(identifier))
+                return BadRequest();
+
+            var result = await _client.GetEntries<Canvas>();
+
+            var viewModel = result.Select(x => new CanvasViewModel()
+            {
+                Name = x.Name,
+                Description = x.Description?.Content?.ToString(),
+                MainImageUrl = x.MainImage?.File?.Url,
+                OtherImageUrls = x.OtherImages?.Where(x => x.File != null).Select(x => x.File.Url).ToList()
+            }).ToList();
+
+            return Ok(viewModel);
+        }
+
+        [HttpGet("entity/{identifier}")]
+        public async Task<IActionResult> GetEntity(string identifier)
+        {
+            if (string.IsNullOrEmpty(identifier))
+                return BadRequest();
+
+            var result = await _client.GetEntry<Canvas>(identifier);
 
             var viewModel = new CanvasViewModel()
             {
@@ -31,10 +62,6 @@ namespace website_isa_com.Controllers
             };
 
             return Ok(viewModel);
-
-            //var t2 = await _client.GetEntriesByType<Canvas>("canvas");
-
-            //return Ok();
         }
     }
 }

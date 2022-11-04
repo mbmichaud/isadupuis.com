@@ -14,15 +14,18 @@
     </section>
 </div>
 
-<div class="text-sm px-4 breadcrumbs">
+<!--<div class="text-sm px-4 breadcrumbs">
     <ul>
         <li><a>Home</a></li>
         <li><a>Item</a></li>
         <li>Item 2</li>
     </ul>
-</div>
-
+</div>-->
 <!-- Content -->
-<div class="prose">
-
-</div>
+<section class="py-6">
+    <div class="container flex flex-col justify-center p-4 mx-auto">
+        <div class="grid grid-cols-1 gap-3 lg:grid-cols-3 sm:grid-cols-2" *ngFor="let item of listing">
+            <img class="object-cover w-full dark:bg-gray-500 aspect-square" [src]="item.mainImageUrl">
+        </div>
+    </div>
+</section>
