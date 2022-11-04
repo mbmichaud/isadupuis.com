@@ -5,7 +5,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 <Project>
   <PropertyGroup>
     <_PublishTargetUrl>C:\Users\Blinkz\Desktop\isa-peinture</_PublishTargetUrl>
-    <History>False|2022-11-04T03:34:39.8936002Z;False|2022-11-03T23:24:33.6926685-04:00;False|2022-11-03T23:21:23.7685368-04:00;True|2022-11-03T23:12:01.3935277-04:00;</History>
+    <History>True|2022-11-04T04:12:21.8228362Z;False|2022-11-04T00:10:34.0764997-04:00;False|2022-11-03T23:54:21.3568038-04:00;False|2022-11-03T23:34:39.8936002-04:00;False|2022-11-03T23:24:33.6926685-04:00;False|2022-11-03T23:21:23.7685368-04:00;True|2022-11-03T23:12:01.3935277-04:00;</History>
     <LastFailureDetails />
   </PropertyGroup>
 </Project>
