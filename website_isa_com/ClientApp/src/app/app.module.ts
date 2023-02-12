@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 import { ContentComponent } from './components/content/content.component';
 import { HomeComponent } from './components/home/home.component';
 import { GalleryComponent } from './components/gallery/gallery.component';
+import { NgxTypedJsModule } from 'ngx-typed-js';
 
 @NgModule({
     declarations: [
@@ -25,7 +26,8 @@ import { GalleryComponent } from './components/gallery/gallery.component';
         RouterModule.forRoot(routes, {
             //scrollPositionRestoration: 'enabled',
         }),
-        ScrollToModule.forRoot()
+        ScrollToModule.forRoot(),
+        NgxTypedJsModule
     ],
     providers: [],
     bootstrap: [AppComponent]

@@ -32,6 +32,7 @@
 		<Folder Include="ClientApp\src\app\models\" />
 		<Folder Include="ClientApp\src\app\utils\" />
 		<Folder Include="ClientApp\src\app\shared\" />
+		<Folder Include="ClientApp\src\assets\images\NewFolder\" />
 		<Folder Include="wwwroot\" />
 	</ItemGroup>
 

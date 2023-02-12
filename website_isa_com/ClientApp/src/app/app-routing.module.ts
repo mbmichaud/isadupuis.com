@@ -6,7 +6,7 @@ import { HomeComponent } from './components/home/home.component';
 
 export const routes: Routes = [
     { path: '', component: HomeComponent, data: { animation: 'home' } },
-    { path: 'gallerie', component: GalleryComponent, data: { animation: 'gallery' } },
+    { path: 'galerie', component: GalleryComponent, data: { animation: 'gallery' } },
     { path: 'a-propos', component: ContentComponent, data: { animation: 'about' } },
     { path: 'nous-joindre', component: ContentComponent, data: { animation: 'contact-us' } },
     { path: '**', component: ContentComponent, data: { animation: 'default' } },
