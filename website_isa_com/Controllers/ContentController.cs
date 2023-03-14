@@ -1,10 +1,10 @@
 ﻿using Contentful.Core;
 using Contentful.Core.Models;
 using Microsoft.AspNetCore.Mvc;
-using website_isa_com.ClientApp.ViewModels;
-using website_isa_com.Models;
+using isadupuis_com.ClientApp.ViewModels;
+using isadupuis_com.Models;
 
-namespace website_isa_com.Controllers
+namespace isadupuis_com.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

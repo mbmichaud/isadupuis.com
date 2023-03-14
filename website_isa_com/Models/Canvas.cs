@@ -1,6 +1,6 @@
 ﻿using Contentful.Core.Models;
 
-namespace website_isa_com.Models
+namespace isadupuis_com.Models
 {
     public class Canvas : SystemProperties
     {

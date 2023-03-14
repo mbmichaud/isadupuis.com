@@ -1,4 +1,4 @@
-namespace website_isa_com.ClientApp.ViewModels
+namespace isadupuis_com.ClientApp.ViewModels
 {
     public class CanvasViewModel
     {

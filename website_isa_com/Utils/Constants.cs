@@ -1,4 +1,4 @@
-﻿namespace website_isa_com.Utils
+﻿namespace isadupuis_com.Utils
 {
     public class Constants
     {

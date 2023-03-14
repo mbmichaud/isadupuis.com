@@ -8,7 +8,7 @@
     }
   },
   "profiles": {
-    "website_isa_com": {
+    "isadupuis_com": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,
