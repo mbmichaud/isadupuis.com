@@ -4,6 +4,9 @@ module.exports = {
         "./src/**/*.{html,ts}",
     ],
     theme: {
+        fontFamily: {
+            'dancing': ['Dancing Script'],
+        },
         extend: {
             //colors: {
             //    "primary": "#5E1C28",

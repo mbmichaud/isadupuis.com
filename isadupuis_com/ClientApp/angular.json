@@ -3,7 +3,7 @@
     "version": 1,
     "newProjectRoot": "projects",
     "projects": {
-        "angular-website": {
+        "isadupuis_com": {
             "projectType": "application",
             "schematics": {
                 "@schematics/angular:component": {
@@ -25,10 +25,11 @@
                         "inlineStyleLanguage": "scss",
                         "assets": [
                             "src/favicon.ico",
-                            "src/assets"
+                            "src/assets",
                         ],
                         "styles": [
-                            "src/assets/styles/styles.scss"
+                            "src/assets/styles/styles.scss",
+                            //"node_modules/photoswipe/dist/photoswipe.css"
                         ],
                         "scripts": [
                         ]
@@ -70,10 +71,10 @@
                     "builder": "@angular-devkit/build-angular:dev-server",
                     "configurations": {
                         "production": {
-                            "browserTarget": "angular-website:build:production"
+                            "browserTarget": "isadupuis_com:build:production"
                         },
                         "development": {
-                            "browserTarget": "angular-website:build:development"
+                            "browserTarget": "isadupuis_com:build:development"
                         }
                     },
                     "defaultConfiguration": "development"
@@ -81,7 +82,7 @@
                 "extract-i18n": {
                     "builder": "@angular-devkit/build-angular:extract-i18n",
                     "options": {
-                        "browserTarget": "angular-website:build"
+                        "browserTarget": "isadupuis_com:build"
                     }
                 },
                 "test": {
