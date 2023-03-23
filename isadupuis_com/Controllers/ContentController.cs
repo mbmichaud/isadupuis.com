@@ -38,8 +38,18 @@ namespace isadupuis_com.Controllers
             {
                 Name = x.Name,
                 Description = x.Description?.Content?.ToString(),
-                MainImageUrl = x.MainImage?.File?.Url,
-                OtherImageUrls = x.OtherImages?.Where(x => x.File != null).Select(x => x.File.Url).ToList()
+                MainImage = new CanvasImage()
+                {
+                    Url= x.MainImage.File.Url,
+                    Width= x.MainImage?.File?.Details?.Image?.Width,
+                    Height= x.MainImage?.File?.Details?.Image?.Height,
+                },
+                OtherImages = x.OtherImages?.Where(x => x.File != null).Select(x => new CanvasImage()
+                {
+                    Url = x.File.Url,
+                    Width = x.File?.Details?.Image?.Width,
+                    Height = x.File?.Details?.Image?.Height,
+                }).ToList()
             }).ToList();
 
             return Ok(viewModel);
@@ -57,8 +67,18 @@ namespace isadupuis_com.Controllers
             {
                 Name = result.Name,
                 Description = result.Description?.Content?.ToString(),
-                MainImageUrl = result.MainImage?.File?.Url,
-                OtherImageUrls = result.OtherImages?.Where(x => x.File != null).Select(x => x.File.Url).ToList()
+                MainImage = new CanvasImage()
+                {
+                    Url = result.MainImage.File.Url,
+                    Width = result.MainImage?.File?.Details?.Image?.Width,
+                    Height = result.MainImage?.File?.Details?.Image?.Height,
+                },
+                OtherImages = result.OtherImages?.Where(x => x.File != null).Select(x => new CanvasImage()
+                {
+                    Url = x.File.Url,
+                    Width = x.File?.Details?.Image?.Width,
+                    Height = x.File?.Details?.Image?.Height,
+                }).ToList()
             };
 
             return Ok(viewModel);
