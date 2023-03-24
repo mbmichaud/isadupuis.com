@@ -5,7 +5,7 @@
         "baseUrl": "./",
         "outDir": "./dist",
         "forceConsistentCasingInFileNames": true,
-        "strict": true,
+        //"strict": true,
         "noPropertyAccessFromIndexSignature": true,
         "noImplicitReturns": true,
         "noFallthroughCasesInSwitch": true,
@@ -15,7 +15,6 @@
         "experimentalDecorators": true,
         "moduleResolution": "node",
         "importHelpers": true,
-        //"skipLibCheck": true,
         "target": "es2020",
         "module": "es2020",
         "lib": [
@@ -26,7 +25,7 @@
         //    "node_modules/@types"
         //],
         "paths": {
-            "photoswipe/lightbox": [ "./node_modules/photoswipe/dist/types/photoswipe.d.ts"],
+            "photoswipe/lightbox": [ "./node_modules/photoswipe/dist/types/photoswipe.d.ts"]
             //"photoswipe/lightbox": [ "node_modules/photoswipe/dist/types/lightbox/lightbox.d.ts" ],
         }
     },
