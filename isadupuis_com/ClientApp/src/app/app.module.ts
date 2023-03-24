@@ -4,12 +4,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
+import { NgxTypedJsModule } from 'ngx-typed-js';
 import { AppRoutingModule, routes } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ContentComponent } from './components/content/content.component';
-import { HomeComponent } from './components/home/home.component';
 import { GalleryComponent } from './components/gallery/gallery.component';
-import { NgxTypedJsModule } from 'ngx-typed-js';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
     declarations: [

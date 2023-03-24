@@ -4,6 +4,8 @@ import { CanvasViewModel } from '../../models/models';
 import { ApiService } from '../../services/api.service';
 import PhotoSwipe from 'photoswipe';
 import PhotoSwipeLightbox from 'photoswipe';
+import { Title } from '@angular/platform-browser';
+import { BasePageComponent } from '../base-page/base-page.component';
 
 @Component({
     selector: 'app-gallery',
@@ -18,19 +20,23 @@ import PhotoSwipeLightbox from 'photoswipe';
         ])
     ]
 })
-export class GalleryComponent implements OnInit {
+export class GalleryComponent extends BasePageComponent implements OnInit {
 
     public listing: CanvasViewModel[] = [];
     public lightbox: any;
 
     constructor(
+        protected title: Title,
         private apiService: ApiService,
-    ) { }
+    ) {
+        super(title);
+        this.setPageTitle("Galerie");
+    }
 
     public async openImage(index: number) {
         //this.setImagesDimensions();
 
-        let photoswipeOptions = {
+        this.lightbox = new PhotoSwipeLightbox({
             gallery: `#canvas-gallery`,
             children: 'div',
             pswpModule: PhotoSwipe,
@@ -42,11 +48,9 @@ export class GalleryComponent implements OnInit {
             arrowNextTitle: 'Suivant',
             showAnimationDuration: 250,
             hideAnimationDuration: 250,
-            //showHideAnimationType: 'fade',
             closeOnVerticalDrag: true,
             dataSource: this.getImagesAsPhotoswipe()
-        };
-        this.lightbox = new PhotoSwipeLightbox(photoswipeOptions);
+        });
         this.lightbox.init();
         this.lightbox.loadAndOpen(index);
     }

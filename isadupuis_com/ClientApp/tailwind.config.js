@@ -21,13 +21,20 @@ module.exports = {
             //},
             animation: {
                 'bg-left-right-slow': 'bg-left-right 5s ease infinite',
+                'infinite-horizontal-wiggle': 'horizontal-wiggle 15s ease infinite',
+                'infinite-horizontal-wiggle-slow': 'horizontal-wiggle 25s ease infinite',
             },
             keyframes: {
                 "bg-left-right": {
                     '0%': { backgroundPosition: '0% 50%' },
                     '50%': { backgroundPosition: '100% 50%' },
                     '100%': { backgroundPosition: '0% 50%' },
-                }
+                },
+                "horizontal-wiggle": {
+                    '0%': { transform: 'translateX(-40%) scaleX(1.4)' },
+                    '50%': { transform: 'translateX(0) scaleX(1.4)' },
+                    '100%': { transform: 'translateX(-40%) scaleX(1.4)' },
+                },
             },
             typography: {
                 DEFAULT: {

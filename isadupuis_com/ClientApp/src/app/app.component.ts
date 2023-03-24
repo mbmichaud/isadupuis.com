@@ -1,6 +1,6 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { ViewportScroller } from '@angular/common';
-import { Component, ElementRef, OnInit } from '@angular/core';
+import { Component, ElementRef, HostListener, OnInit } from '@angular/core';
 import { ChildrenOutletContexts, NavigationEnd, NavigationStart, Router, Scroll } from '@angular/router';
 import { fadedNavigationAnimation, navigationAnimationDuration } from './animations';
 import { ApiService } from './services/api.service';
@@ -21,12 +21,12 @@ import { ApiService } from './services/api.service';
             })),
         ])
     ],
-
 })
 
 export class AppComponent implements OnInit {
 
     public isNavigating: boolean = false;
+    public isMenuOpened: boolean = false;
 
     constructor(
         private router: Router,
@@ -36,13 +36,23 @@ export class AppComponent implements OnInit {
         private contexts: ChildrenOutletContexts,
     ) { }
 
+    @HostListener("click") onPageClick() {
+        console.log("clicked page");
+        this.isMenuOpened = false;
+    }
+
     public getRouteAnimationData() {
         return this.contexts.getContext('primary')?.route?.snapshot?.data?.['animation'];
     }
 
-    public onNavigationAnimationDone(event: any) {
-        this.isNavigating = false;
+    public onMenuClick(event: Event) {
+        event.stopPropagation();
+        this.isMenuOpened = !this.isMenuOpened;
+        console.log("clicked button");
+    }
 
+    public onNavigationAnimationDone() {
+        this.isNavigating = false;
     }
 
     ngOnInit(): void {
