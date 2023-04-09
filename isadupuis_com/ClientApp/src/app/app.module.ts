@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { ContentComponent } from './components/content/content.component';
 import { GalleryComponent } from './components/gallery/gallery.component';
 import { HomeComponent } from './components/home/home.component';
+import { CanvasListingComponent } from './shared/canvas-listing/canvas-listing.component';
 
 @NgModule({
     declarations: [
@@ -17,6 +18,7 @@ import { HomeComponent } from './components/home/home.component';
         HomeComponent,
         ContentComponent,
         GalleryComponent,
+        CanvasListingComponent,
     ],
     imports: [
         BrowserModule,

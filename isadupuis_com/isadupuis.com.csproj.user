@@ -3,9 +3,5 @@
   <PropertyGroup>
     <NameOfLastUsedPublishProfile>E:\Projects\website_isa_com\website_isa_com\Properties\PublishProfiles\FolderProfile.pubxml</NameOfLastUsedPublishProfile>
   </PropertyGroup>
-  <ItemGroup>
-    <TypeScriptCompile Update="ClientApp\src\app\services\base.service.ts">
-      <SubType>Code</SubType>
-    </TypeScriptCompile>
-  </ItemGroup>
+  <ItemGroup />
 </Project>

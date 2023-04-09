@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { ScrollToService } from '@nicky-lenaers/ngx-scroll-to';
-import { ApiService } from '../../services/api.service';
+import { ApiService, FilterParams } from '../../services/api.service';
 import { BasePageComponent } from '../base-page/base-page.component';
 
 @Component({
@@ -11,12 +11,15 @@ import { BasePageComponent } from '../base-page/base-page.component';
 })
 export class HomeComponent extends BasePageComponent implements OnInit {
 
+    public canvasFilterParams = new FilterParams();
+
     constructor(
         protected title: Title,
         private apiService: ApiService,
     ) {
         super(title);
         this.setPageTitle("Accueil");
+        this.canvasFilterParams.take = 3;
     }
 
     ngOnInit(): void {

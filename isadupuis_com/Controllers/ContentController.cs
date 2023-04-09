@@ -3,6 +3,7 @@ using Contentful.Core.Models;
 using Microsoft.AspNetCore.Mvc;
 using isadupuis_com.ClientApp.ViewModels;
 using isadupuis_com.Models;
+using isadupuis.com.Params;
 
 namespace isadupuis_com.Controllers
 {
@@ -26,13 +27,18 @@ namespace isadupuis_com.Controllers
             return Ok();
         }
 
-        [HttpGet("entities/{identifier}")]
-        public async Task<IActionResult> GetEntities(string identifier)
+        [HttpPost("get-canvas-listing")]
+        public async Task<IActionResult> GetCanvasListing([FromBody] FilterParams parameters)
         {
-            if (string.IsNullOrEmpty(identifier))
+            if (parameters == null)
                 return BadRequest();
 
-            var result = await _client.GetEntries<Canvas>();
+            var queryBuilder = new Contentful.Core.Search.QueryBuilder<Canvas>();
+
+            if (parameters.Take.HasValue)
+                queryBuilder = queryBuilder.Limit(parameters.Take.Value);
+
+            var result = await _client.GetEntries(queryBuilder);
 
             var viewModel = result.Select(x => new CanvasViewModel()
             {
@@ -40,9 +46,9 @@ namespace isadupuis_com.Controllers
                 Description = x.Description?.Content?.ToString(),
                 MainImage = new CanvasImage()
                 {
-                    Url= x.MainImage.File.Url,
-                    Width= x.MainImage?.File?.Details?.Image?.Width,
-                    Height= x.MainImage?.File?.Details?.Image?.Height,
+                    Url = x.MainImage.File.Url,
+                    Width = x.MainImage?.File?.Details?.Image?.Width,
+                    Height = x.MainImage?.File?.Details?.Image?.Height,
                 },
                 OtherImages = x.OtherImages?.Where(x => x.File != null).Select(x => new CanvasImage()
                 {

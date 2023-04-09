@@ -11,6 +11,18 @@ import { ApiService } from './services/api.service';
     styleUrls: ['./app.component.scss'],
     animations: [
         fadedNavigationAnimation,
+        trigger('enterFadeIn', [
+            transition(':enter', [
+                style({ opacity: '0' }),
+                animate('300ms ease', style({ opacity: '1' })),
+            ]),
+        ]),
+        trigger('enterFadeInDelayed', [
+            transition(':enter', [
+                style({ opacity: '0' }),
+                animate('300ms 300ms ease', style({ opacity: '1' })),
+            ]),
+        ]),
         trigger('fadeInOut', [
             state('visible', style({
                 opacity: 1,

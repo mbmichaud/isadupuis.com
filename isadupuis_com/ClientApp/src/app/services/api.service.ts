@@ -4,6 +4,10 @@ import { catchError, Observable } from 'rxjs';
 import { CanvasViewModel } from '../models/models';
 import { BaseService } from './base.service';
 
+export class FilterParams {
+    take?: number;
+}
+
 @Injectable({
     providedIn: 'root'
 })
@@ -11,7 +15,7 @@ export class ApiService extends BaseService {
 
     constructor(
         private http: HttpClient,
-    ) {
+    ) { 
         super();
     }
 
@@ -22,10 +26,10 @@ export class ApiService extends BaseService {
             );
     }
 
-    public getEntities(identifier: string): Observable<CanvasViewModel[]> {
-        return this.http.get<CanvasViewModel[]>(`/api/content/entities/${identifier}`)
+    public getCanvasListing(filterParams?: FilterParams): Observable<CanvasViewModel[]> {
+        return this.http.post<CanvasViewModel[]>(`/api/content/get-canvas-listing`, filterParams)
             .pipe(
-                catchError(this.handleError('getEntities', []))
+                catchError(this.handleError('getCanvasListing', []))
             );
     }
 
