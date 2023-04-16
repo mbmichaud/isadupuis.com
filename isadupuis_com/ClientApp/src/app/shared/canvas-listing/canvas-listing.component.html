@@ -6,7 +6,7 @@
          *ngFor="let item of listing; let index = index"
          (click)="openImage(index)">
         <span *ngIf="index == 0" class="indicator-item badge badge-primary absolute right-1 top-1 select-none">nouveau</span>
-        <img class="object-cover w-full dark:bg-gray-500 aspect-square rounded-lg" [src]="item.mainImage.url">
+        <img class="object-cover w-full bg-gray-500 aspect-square rounded-lg" [src]="item.mainImage.url">
         <div class="group/card opacity-0 group-hover/item:opacity-100 transition duration-250 flex w-full p-4 absolute bottom-0 left-0 bg-base-100/75 translate-y-2 group-hover/item:translate-y-0 rounded-b-lg">
             <div>{{item.name}}</div>
             <div class="pswp-caption-content">{{item.name}}</div>
